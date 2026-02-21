@@ -1,0 +1,12 @@
+{
+    "mcpServers": {
+        "laravel-boost": {
+            "command": "/Users/shrutibalasa/Library/Application",
+            "args": [
+                "Support/Herd/bin/php84",
+                "/Users/shrutibalasa/projects/laracasts/practical-ui-components/ui-components/artisan",
+                "boost:mcp"
+            ]
+        }
+    }
+}

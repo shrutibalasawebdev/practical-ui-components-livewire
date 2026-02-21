@@ -1,0 +1,72 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+    --animate-fade-in-down: fade-in-down 0.5s ease-in;
+    --animate-fade-out-up: fade-out-up 0.5s ease-out;
+    --animate-slide-down: slide-down 0.5s ease-out forwards;
+}
+
+@keyframes fade-in-down {
+    from { opacity: 0; transform: translateY(-1rem); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-out-up {
+    from { opacity: 1; transform: translateY(0); }
+    to { opacity: 0; transform: translateY(-1rem); }
+}
+
+@keyframes slide-out-left {
+    from { transform: translateX(0); }
+    to { transform: translateX(-100%); }
+}
+
+@keyframes slide-in-right {
+    from { transform: translateX(100%); }
+    to { transform: translateX(0); }
+}
+
+@keyframes slide-out-right {
+    from { transform: translateX(0); }
+    to { transform: translateX(100%); }
+}
+
+@keyframes slide-in-left {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(0); }
+}
+
+html:active-view-transition-type(forward) {
+    &::view-transition-old(form) {
+        animation: 300ms ease-in-out slide-out-left both;
+    }
+
+    &::view-transition-new(form) {
+        animation: 300ms ease-in-out slide-in-right both;
+    }
+}
+
+html:active-view-transition-type(backward) {
+    &::view-transition-old(form) {
+        animation: 300ms ease-in-out slide-out-right both;
+    }
+    &::view-transition-new(form) {
+        animation: 300ms ease-in-out slide-in-left both;
+    }
+}
+
+::view-transition-group(form) {
+    overflow: clip;
+}
+
+@keyframes slide-down {
+    from { grid-template-rows: 0fr; }
+    to { grid-template-rows: 1fr; }
+}
