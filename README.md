@@ -27,8 +27,8 @@ Each episode builds a real-world interactive component using Livewire's single-f
 ## Getting Started
 
 ```bash
-git clone https://github.com/shrutibalasawebdev/practical-ui-components.git
-cd practical-ui-components
+git clone https://github.com/shrutibalasawebdev/practical-ui-components-livewire.git
+cd practical-ui-components-livewire
 composer setup
 ```
 
