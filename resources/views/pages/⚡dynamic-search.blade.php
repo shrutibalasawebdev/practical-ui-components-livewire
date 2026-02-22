@@ -111,10 +111,10 @@ class extends Component {
             }
         },
 
-        useSearch(term) {
+        useRecentSearch(term) {
             $wire.set('search', term)
             $wire.addToRecentSearches(term)
-            this.open = false
+            this.open = true
         }
     }"
 >
